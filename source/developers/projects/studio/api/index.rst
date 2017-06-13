@@ -137,3 +137,24 @@ Audit
 	audit/system
 	audit/organization
 	audit/project
+
+----------
+Monitoring
+----------
+
+.. toctree::
+	:maxdepth: 1
+
+	monitor/version
+	monitor/status
+	monitor/memory
+
+----
+CMIS
+----
+
+.. toctree::
+	:maxdepth: 1
+
+	cmis/list
+	cmis/search
