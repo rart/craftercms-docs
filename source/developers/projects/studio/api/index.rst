@@ -158,3 +158,14 @@ CMIS
 
 	cmis/list
 	cmis/search
+
+-------
+Publish
+-------
+
+.. toctree::
+	:maxdepth: 1
+
+	publish/status
+	publish/start
+	publish/stop
