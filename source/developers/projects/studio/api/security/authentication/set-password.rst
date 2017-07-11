@@ -1,4 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
 
 .. _crafter-studio-api-security-set-password:
 
