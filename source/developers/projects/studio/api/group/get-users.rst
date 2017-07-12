@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-studio-api-group-users:
 
 ===================
@@ -56,6 +54,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
+  :linenos:
 
   {
     "total": 2
