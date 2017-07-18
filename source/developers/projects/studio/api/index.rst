@@ -158,6 +158,7 @@ CMIS
 
 	cmis/list
 	cmis/search
+	cmis/clone
 
 -------
 Publish
