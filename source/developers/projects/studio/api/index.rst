@@ -54,7 +54,7 @@ Role Management
 ---------------
 
 .. toctree::
-	:maxdepth: 1
+   :maxdepth: 1
 
 	role/create
 	role/get
@@ -83,9 +83,10 @@ Repo Management
 ---------------
 
 .. toctree::
-	:maxdepth: 1
+   :maxdepth: 1
 
-	repo/sync-from-repo
+   repo/sync-from-repo
+   repo/rebuild-database
 
 
 --------
@@ -97,7 +98,7 @@ Authentication
 ^^^^^^^^^^^^^^
 
 .. toctree::
-	:maxdepth: 1
+   :maxdepth: 1
 
 	security/authentication/login
 	security/authentication/logout
@@ -116,7 +117,7 @@ Policy
 ^^^^^^
 
 .. toctree::
-	:maxdepth: 1
+   :maxdepth: 1
 
 	security/authorization/policy/create
 	security/authorization/policy/get
@@ -125,7 +126,6 @@ Policy
 	security/authorization/policy/list-users
 	security/authorization/policy/update
 	security/authorization/policy/delete
-
 
 -----
 Audit
@@ -143,30 +143,103 @@ Monitoring
 ----------
 
 .. toctree::
-	:maxdepth: 1
+   :maxdepth: 1
 
-	monitor/version
-	monitor/status
-	monitor/memory
+   monitor/version
+   monitor/status
+   monitor/memory
 
 ----
 CMIS
 ----
 
 .. toctree::
-	:maxdepth: 1
+   :maxdepth: 1
 
-	cmis/list
-	cmis/search
-	cmis/clone
+   cmis/list
+   cmis/search
+   cmis/clone
 
 -------
 Publish
 -------
 
 .. toctree::
-	:maxdepth: 1
+   :maxdepth: 1
 
 	publish/status
 	publish/start
 	publish/stop
+
+--------
+Activity
+--------
+
+.. toctree::
+   :maxdepth: 1
+
+   activity/get-user-activity
+   activity/post-activity
+
+---------
+Clipboard
+---------
+
+.. toctree::
+   :maxdepth: 1
+
+   clipboard/copy-item
+   clipboard/cut-item
+   clipboard/get-items
+   clipboard/paste-item
+
+-------
+Content
+-------
+.. toctree::
+   :maxdepth: 1
+
+   content/change-content-type
+   content/content-exists
+   content/create-folder
+   content/delete-content
+   content/get-content
+   content/get-content-at-path
+   content/get-content-type
+   content/get-content-types
+   content/get-item
+   content/get-item-orders
+   content/get-item-states
+   content/get-item-versions
+   content/get-items-tree
+   content/reorder-items
+   content/revert-content
+   content/unlock-content
+
+----------
+Dependency
+----------
+.. toctree::
+   :maxdepth: 1
+
+   dependency/get-dependant
+   dependency/get-dependencies
+
+----------
+Deployment
+----------
+.. toctree::
+   :maxdepth: 1
+
+   deployment/bulk-golive
+   deployment/get-available-publishing-channels
+   deployment/get-deployment-history
+   deployment/get-scheduled-items
+
+-------
+Preview
+-------
+.. toctree::
+   :maxdepth: 1
+
+   preview/sync-site
