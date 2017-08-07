@@ -1,10 +1,10 @@
-.. _crafter-studio-api-security-login:
+.. _crafter-studio-api-user-set-password:
 
-=====
-Login
-=====
+============
+Set Password
+============
 
-Authenticates the user.
+Set Crafter Studio's user password provided a forgot password secure token (obtained through :ref:`crafter-studio-api-user-forgot-password`).
 
 --------------------
 Resource Information
@@ -13,9 +13,11 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/security/login.json``                    |
+|| URL                       || ``/api/1/services/api/1/user/set-password.json``                 |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
++----------------------------+-------------------------------------------------------------------+
+|| Required Role             || Anonymous                                                        |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
@@ -25,56 +27,44 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| username     || String     || |checkmark|  || The username                                    |
+|| token        || String     || |checkmark|  || Forgot password secure token.                   |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| password     || String     || |checkmark|  || The password                                    |
+|| new          || String     || |checkmark|  || User's new password (clear)                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 
 -------
 Example
 -------
 
-^^^^^^^
-Request
-^^^^^^^
+.. code-block:: guess
 
-``POST .../api/1/services/api/1/security/login.json``
+	POST .../api/1/services/api/1/user/set-password.json
 
 .. code-block:: json
 
   {
-    "username" : "jane.doe",
-    "password" : "SuperSecretPassword321#"
+    "token" : "asfopaiu02928s0980b98a098gs0fduoi2j341j448t735h1lk40",
+    "new" : "SuperSecretPassword321#"
   }
 
-^^^^^^^^
+--------
 Response
-^^^^^^^^
-
-``Status 200 OK``
-
-.. code-block:: json
-
-  {
-    "username": "jane.doe",
-    "first_name": "Jane",
-    "last_name": "Doe",
-    "email": "jane.doe@example.com"
-  }
-
----------
-Responses
----------
+--------
 
 +---------+-------------------------------------------+---------------------------------------------------+
 || Status || Location                                 || Response Body                                    |
 +=========+===========================================+===================================================+
-|| 200    ||                                          || See example above                                |
+|| 200    || ``.../user/get.json?username=:username`` || ``{ "message" : "OK" }``                         |
++---------+-------------------------------------------+---------------------------------------------------+
+|| 400    ||                                          || ``{ "message" : "Invalid parameter(s)" }``       |
 +---------+-------------------------------------------+---------------------------------------------------+
 || 400    ||                                          || ``{ "message" : "Bad Request" }``                |
 +---------+-------------------------------------------+---------------------------------------------------+
 || 401    ||                                          || ``{ "message" : "Unauthorized" }``               |
 +---------+-------------------------------------------+---------------------------------------------------+
-|| 500    ||                                          || ``{ "message" : "Internal server error.``        |
-||        ||                                          || ``ACTUAL_EXCEPTION" }``                          |
+|| 403    ||                                          || ``{ "message" : "Externally managed user" }``    |
++---------+-------------------------------------------+---------------------------------------------------+
+|| 404    ||                                          || ``{ "message" : "User not found" }``             |
++---------+-------------------------------------------+---------------------------------------------------+
+|| 500    ||                                          || ``{ "message" : "Internal server error" }``      |
 +---------+-------------------------------------------+---------------------------------------------------+
